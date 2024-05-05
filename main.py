@@ -79,7 +79,7 @@ class MicrosoftRewardsHack:
         with open(log_file, "a") as file:
             file.write(f"{getCurrentTime()} \t Capturing the screenshot for the element -> {nameOfElement}\n")
             
-        time.sleep(1)
+        time.sleep(2)
         screenshot = pyautogui.screenshot()
         screenshot.save("screenshot.png")
         screen_image = cv2.imread("screenshot.png", 0)
@@ -91,13 +91,14 @@ class MicrosoftRewardsHack:
         # Get the coordinates of the matched region
         points = list(zip(*loc[::-1]))  # Switch x and y coordinates
         if points:
-            # Calculate the middle point of the matched region
-            min_x, max_x = min(points, key=lambda x: x[0])[0], max(points, key=lambda x: x[0])[0]
-            min_y, max_y = min(points, key=lambda x: x[1])[1], max(points, key=lambda x: x[1])[1]
-            middle_point = (min_x + (max_x - min_x) // 2, min_y + (max_y - min_y) // 2)
-            # Perform the click on the middle point
-            pyautogui.click(middle_point)
-            print(f"Clicked at {middle_point}")
+            # Sort points by x coordinate (leftmost point first)
+            points = sorted(points, key=lambda x: x[0])
+            # Take the first (leftmost) point
+            leftmost_point = points[0]
+            # Perform the click on the leftmost point
+            pyautogui.click(leftmost_point)
+            print(f"Clicked at {leftmost_point}")
+            time.sleep(1)
             return True
         else:
             print("No match found with the given threshold.")
@@ -168,14 +169,14 @@ class MicrosoftRewardsHack:
                 output = MicrosoftRewardsHack(username=self.username, password=self.password, email=self.email, emailPassword=self.emailPassword).interactElement(file_path=file_path)
                 print(output)
                 if output == True:
+                    time.sleep(1)
                     pyautogui.typewrite(self.username, interval=0.2)
                     break
                 elif output == False:
                     continue
             except Exception as err:
-                print(f"Error occure -> {err}")
+                print(f"Error occurred -> {err}")
         # part found where we need to click!
-        pyautogui.typewrite("yeah it works!")
         
         
         
@@ -187,9 +188,10 @@ class MicrosoftRewardsHack:
         
         # ! Here comes the part to click on the next button
         #email-or-username part
-        email_or_username_next_button = data["email-or-UsernameNextButton"]
-        id = email_or_username["id"]
-        fullXpath = email_or_username["fullXpath"]
+        email_or_username_nextButton = data["email-or-UsernameNextButton"]
+        id = email_or_username_nextButton["id"]
+        fullXpath = email_or_username_nextButton["fullXpath"]
+        print(id)
         
         currentElement = "Username Next Button"
         timeStart = time.time()
@@ -200,11 +202,11 @@ class MicrosoftRewardsHack:
             try:
                 # ^ This try segment tries to catch that particular element!
                 try:
-                    username_input = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.ID, id)))
+                    username_next = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.ID, id)))
                     break
                 except TimeoutError:
                     try:
-                        username_input = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.XPATH, fullXpath)))
+                        username_next = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.XPATH, fullXpath)))
                         break
                     except TimeoutError:
                         currentTime = time.time()
@@ -230,12 +232,13 @@ class MicrosoftRewardsHack:
         while True:
             time.sleep(1)
             try:
-                print(username_input[0])
+                print(username_next[0])
                 print("\n\n\n\n\n")
-                username_input[0].screenshot(file_path)
+                username_next[0].screenshot(file_path)
                 output = MicrosoftRewardsHack(username=self.username, password=self.password, email=self.email, emailPassword=self.emailPassword).interactElement(file_path=file_path)
                 print(output)
                 if output == True:
+                    time.sleep(1)
                     pyautogui.typewrite(self.username, interval=0.2)
                     break
                 elif output == False:
@@ -243,14 +246,13 @@ class MicrosoftRewardsHack:
             except Exception as err:
                 print(f"Error occure -> {err}")
         # part found where we need to click!
-
-
-
-
-        username_input = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, 'XPATHOFTHEPART')))
-        username_input.send_keys("sampleData")
         
         
         
 if __name__ == '__main__':
-    MicrosoftRewardsHack(username="temp", password="sfs", email="sdf", emailPassword="Sdf").loginAccount()
+    with open('accounts.json', 'r') as f:
+        data = json.load(f)
+
+    # this is temporary thing here
+    account = data["account1"]
+    MicrosoftRewardsHack(username=account["username"], password=account["password"], email=account["email"], emailPassword=data["emailPassword"]).loginAccount()

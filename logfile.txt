@@ -1,0 +1,51 @@
+2024-05-05 14:29:36.339641 	 Launching the driver
+2024-05-05 14:29:45.189667 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:29:45.189667 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:29:48.658936 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:29:48.659932 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:30:30.645151 	 Launching the driver
+2024-05-05 14:31:01.338280 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:31:01.339286 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:31:04.782058 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:31:04.783054 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:32:44.481707 	 Launching the driver
+2024-05-05 14:32:51.894336 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:32:51.895336 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:32:55.350604 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:32:55.350604 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:32:57.623403 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:32:57.623403 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:32:59.908934 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:32:59.908934 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:02.189996 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:02.190991 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:04.494829 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:04.496134 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:06.810933 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:06.811656 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:09.080653 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:09.081684 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:11.370964 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:11.371957 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:13.658162 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:13.658162 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:15.934579 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:15.934937 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:18.221443 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:18.222052 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:20.492949 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:20.492949 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:33:22.871923 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:33:22.871923 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:34:44.712346 	 Launching the driver
+2024-05-05 14:34:53.506913 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:34:53.507872 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:34:57.006952 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:34:57.007949 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:34:59.269227 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:34:59.269227 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:36:03.077427 	 Launching the driver
+2024-05-05 14:36:11.459668 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:36:11.459668 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:36:14.935763 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:36:14.940221 	 Capturing the screenshot for the element -> Not Mentioned!
