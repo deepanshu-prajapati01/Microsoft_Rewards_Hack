@@ -75,7 +75,7 @@ class MicrosoftRewardsHack:
         
         
 
-    def loginAccount(self, username:str, password:str, email:str, emailPassword:str):
+    def loginAccount(self):
         driver = MicrosoftRewardsHack.launchDriver()
         # loading all data from the file
         with open('loginXpath.json', 'r') as f:
