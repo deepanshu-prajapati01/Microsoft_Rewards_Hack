@@ -49,3 +49,48 @@
 2024-05-05 14:36:11.459668 	 Capturing the screenshot for the element -> Not Mentioned!
 2024-05-05 14:36:14.935763 	 Started to click on the element -> Not Mentioned!
 2024-05-05 14:36:14.940221 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:44:31.087067 	 Launching the driver
+2024-05-05 14:44:38.709470 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:44:38.710466 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:44:46.264649 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:44:46.264649 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:45:01.384098 	 Launching the driver
+2024-05-05 14:45:09.742901 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:45:09.743417 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:45:17.281201 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:45:17.282201 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:45:28.236202 	 Launching the driver
+2024-05-05 14:45:37.442662 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:45:37.443652 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:45:45.183243 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:45:45.184262 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:46:05.590647 	 Launching the driver
+2024-05-05 14:46:13.391881 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:46:13.391881 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:46:16.683569 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:46:16.683569 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:46:20.135601 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:46:20.136599 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:46:23.563648 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:46:23.563648 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:19.210097 	 Launching the driver
+2024-05-05 14:47:27.434594 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:27.434594 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:30.714672 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:30.714672 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:34.010686 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:34.010686 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:37.296366 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:37.297840 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:40.593700 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:40.593700 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:48.175127 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:48.175127 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:52.204910 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:52.204910 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:47:56.097176 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:47:56.098185 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:48:00.000119 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:48:00.001116 	 Capturing the screenshot for the element -> Not Mentioned!
+2024-05-05 14:48:03.879488 	 Started to click on the element -> Not Mentioned!
+2024-05-05 14:48:03.879488 	 Capturing the screenshot for the element -> Not Mentioned!

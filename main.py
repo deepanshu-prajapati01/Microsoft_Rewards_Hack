@@ -86,7 +86,7 @@ class MicrosoftRewardsHack:
         # Perform template matching
         result = cv2.matchTemplate(screen_image, target_image, cv2.TM_CCOEFF_NORMED)
         # Set a threshold for matching - it is percentage
-        threshold = 0.4
+        threshold = 0.5
         loc = np.where(result >= threshold)
         # Get the coordinates of the matched region
         points = list(zip(*loc[::-1]))  # Switch x and y coordinates
@@ -246,7 +246,7 @@ class MicrosoftRewardsHack:
             except Exception as err:
                 print(f"Error occure -> {err}")
         # part found where we need to click!
-        
+        input()
         
         
 if __name__ == '__main__':
@@ -255,4 +255,4 @@ if __name__ == '__main__':
 
     # this is temporary thing here
     account = data["account1"]
-    MicrosoftRewardsHack(username=account["username"], password=account["password"], email=account["email"], emailPassword=data["emailPassword"]).loginAccount()
+    MicrosoftRewardsHack(username=account["username"], password=account["password"], email=account["email"], emailPassword=account["emailPassword"]).loginAccount()
