@@ -33,11 +33,11 @@ def getenv(var):
 
 
 class MicrosoftRewardsHack:
-    def __init__(self, username : str, password:str, email:str, emailPassword:str) -> None:
-        username = self.username
-        password = self.password
-        email = self.email
-        emailPassword = self.emailPassword
+    def __init__(self, username, password, email, emailPassword):
+        self.username = username
+        self.password = password
+        self.email = email
+        self.emailPassword = emailPassword
 
 
     def launchDriver(self):  
@@ -46,37 +46,46 @@ class MicrosoftRewardsHack:
         chrome_options.add_argument('--incognito')
         chrome_options.add_experimental_option('detach', True)
         # Initialize the WebDriver with the options
-        driver = webdriver.Chrome(options=chrome_options)    
-        return driver    
+        driver = webdriver.Chrome(options=chrome_options)
+        return driver
     
     
-    def interactElement(self, is_text = True, file_path = "temp_target.png"):
-        if self.is_text == True:
-            screen_image = cv2.imread("screenshot.png", 0)
-            # Perform template matching
-            result = cv2.matchTemplate(screen_image, file_path, cv2.TM_CCOEFF_NORMED)
-            # Set a threshold for matching - it is percentage
-            threshold = 0.8
-            loc = np.where(result >= threshold)
-            # Get the coordinates of the matched region
-            points = list(zip(*loc[::-1]))  # Switch x and y coordinates
-            if points:
-                # Sort points by x coordinate (leftmost point first)
-                points = sorted(points, key=lambda x: x[0])
-                # Take the first (leftmost) point
-                leftmost_point = points[0]
-                # Perform the click on the leftmost point
-                pyautogui.click(leftmost_point)
-                print(f"Clicked at {leftmost_point}")
-                return True
-            else:
-                print("No match found with the given threshold.")
-                return False
+    def interactElement(self, file_path = "temp_target.png"):
+        # Read the target image as a grayscale image
+        target_image = cv2.imread(file_path, 0)
+        if target_image is None:
+            raise ValueError(f"Image at path {file_path} could not be read.")
+        
+        # Capture the screenshot
+        time.sleep(1)
+        screenshot = pyautogui.screenshot()
+        screenshot.save("screenshot.png")
+        screen_image = cv2.imread("screenshot.png", 0)
+        # Perform template matching
+        result = cv2.matchTemplate(screen_image, target_image, cv2.TM_CCOEFF_NORMED)
+        # Set a threshold for matching - it is percentage
+        threshold = 0.4
+        loc = np.where(result >= threshold)
+        # Get the coordinates of the matched region
+        points = list(zip(*loc[::-1]))  # Switch x and y coordinates
+        if points:
+            # Sort points by x coordinate (leftmost point first)
+            points = sorted(points, key=lambda x: x[0])
+            # Take the first (leftmost) point
+            leftmost_point = points[0]
+            # Perform the click on the leftmost point
+            pyautogui.click(leftmost_point)
+            print(f"Clicked at {leftmost_point}")
+            return True
+        else:
+            print("No match found with the given threshold.")
+            return False
         
         
 
-    def loginAccount(self, username, password, email, emailPassword):
-        driver = MicrosoftRewardsHack.launchDriver()
+    def loginAccount(self):
+        driver = MicrosoftRewardsHack(username=self.username, password=self.password, email=self.email, emailPassword=self.emailPassword).launchDriver()
+        driver.get("https://rewards.microsoft.com")
         # loading all data from the file
         with open('loginXpath.json', 'r') as f:
             data = json.load(f)
@@ -92,14 +101,20 @@ class MicrosoftRewardsHack:
         currentElement = "Username for Login"
         timeStart = time.time()
         while True:
+            print("HERE IS THE LOG FILE")
+            print(f"id - {id}")
+            print(f"fullxpath - {fullXpath}")
+
+            
+            
             try:
                 # This try segment tries to catch that particular element!
                 try:
-                    username_input = WebDriverWait(driver, 10).until(EC.visibility_of_elements_located((By.ID, id)))
+                    username_input = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.ID, id)))
                     break
                 except TimeoutError:
                     try:
-                        username_input = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, fullXpath)))
+                        username_input = WebDriverWait(driver, 10).until(EC.visibility_of_any_elements_located((By.XPATH, fullXpath)))
                         break
                     except TimeoutError:
                         currentTime = time.time()
@@ -121,58 +136,28 @@ class MicrosoftRewardsHack:
                 exit(-2)
 
         # Now the Username is found, so send the username
-        file_path = "temp_target"
+        file_path = "temp_target.png"
         while True:
+            time.sleep(1)
             try:
-                username_input.screenshot_as_png(file_path)
-                output = MicrosoftRewardsHack.interactElement(file_path=f"{file_path}.png")
+                print(username_input[0])
+                print("\n\n\n\n\n")
+                username_input[0].screenshot(file_path)
+                output = MicrosoftRewardsHack(username=self.username, password=self.password, email=self.email, emailPassword=self.emailPassword).interactElement(file_path=file_path)
+                print(output)
                 if output == True:
-                    pyautogui.typewrite(username, interval=0.2)
+                    pyautogui.typewrite(self.username, interval=0.2)
                     break
                 elif output == False:
+                    exit(-1)
                     continue
             except Exception as err:
                 print(f"Error occure -> {err}")
         
+        # part found where we need to click!
+        pyautogui.typewrite("yeah it works!")
         
-
-
-
-        #email-or-UsernameNextButton part
-        email_or_UsernameNextButton = data["email-or-UsernameNextButton"]
-        id = email_or_UsernameNextButton["id"]
-        fullXpath = email_or_UsernameNextButton["fullXpath"]
-
-        currentElement = "Username Next Button"
-        timeStart = time.time()
-        while True:
-            try:
-                # This try segment tries to catch that particular element!
-                try:
-                    username_next_button = WebDriverWait(driver, 10).until(EC.visibility_of_elements_located((By.ID, id)))
-                    break
-                except TimeoutError:
-                    try:
-                        username_next_button = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, fullXpath)))
-                        break
-                    except TimeoutError:
-                        currentTime = time.time()
-                        if ((currentTime-timeStart)/60) <= 2.3:
-                            print(f"Error in finding the element -> [{currentElement}], please take a look at the code")
-                            input("Hit enter after the problem is solved!")
-                            choice = input("Do you want to start everything from the beginning? (y/n)").lower()
-                            if choice == "y":
-                                pass
-                            elif choice == "n":
-                                pass
-                            else:
-                                pass
-                        continue
-            except Exception as err:
-                #this segment deals with the very rare uncertain things! 100% the code won't come here!
-                print("Very complicated issue")
-                print(err)
-                exit(-2)
+        input("ENter any key to exit!")
 
 
 
