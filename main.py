@@ -183,4 +183,4 @@ class MicrosoftRewardsHack:
         
         
 if __name__ == '__main__':
-    pass
+    MicrosoftRewardsHack.loginAccount(username="temp", password="sfs", email="sdf", emailPassword="Sdf")
