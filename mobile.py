@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import time, os
 import random, requests
 
-os.chdir("Targets")
+os.chdir("mobile")
 
 def getSearchQueries(num: int, api_url: str, api_key: str) -> list:
     # List to store the final search queries
@@ -99,9 +99,12 @@ def preInteract(percentage:int) -> bool:
     return False
 
 
-def main(searches = 10, percentage=0.4):
+def main(searches = 10, percentage=0.9):
     search_queries = searchQueries(num=searches)
     for search_query in search_queries:
+        time.sleep(random.uniform(0.6, 2))
+        pyautogui.press('up', presses=3)
+        pyautogui.moveTo(x=12, y=12)
         time.sleep(random.uniform(0.6, 2))
         if preInteract(percentage=percentage):
             '''if it returns false then the program will not work and stops immediately'''
@@ -117,4 +120,4 @@ def main(searches = 10, percentage=0.4):
 
 
 if __name__ == '__main__':
-    main(searches=int(input("Enter the amount of searches you want (max-30)")), percentage=0.5)
+    main(searches=int(input("Enter the amount of searches you want (max-20)")), percentage=0.5)
