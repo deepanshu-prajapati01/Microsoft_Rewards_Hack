@@ -110,7 +110,7 @@ def main(searches = 10, percentage=0.4):
             pyautogui.press('delete')
             time.sleep(random.uniform(0.6, 2))
             pyautogui.typewrite(" h\b", interval=0.1)
-            pyautogui.write(search_query)
+            pyautogui.write(search_query[:40])
             time.sleep(random.uniform(0.6, 2))
             pyautogui.press("enter")
             time.sleep(3)
